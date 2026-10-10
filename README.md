@@ -1,31 +1,49 @@
-# VITS: Conditional Variational Autoencoder with Adversarial Learning for End-to-End Text-to-Speech
+# Walloon Speech Synthesis with VITS
 
-This project provides a step-by-step guide on training VITS, a state-of-the-art model designed for high-quality speech synthesis. The goal of this project is to help others use VITS on their custom datasets and generate high-quality TTS outputs from scratch.
+Code for the first text-to-speech system for Walloon, an under-resourced Romance language of Belgium, developed at LISN (CNRS / Université Paris-Saclay).
 
-### Project Overview
-- **Goal**: Train a VITS model from scratch using custom datasets, focusing on high-quality TTS generation.
-- **Key Techniques**: Variational autoencoding, adversarial learning, and TTS.
-- **Tools & Libraries**: Python, PyTorch, Jupyter, Hugging Face Transformers.
+**Paper:** José Felipe Espinosa Orjuela, Philippe Boula de Mareüil, Marc Evrard. *Speech synthesis for Walloon, an under-resourced minority language.* 13th Speech Synthesis Workshop (SSW 2025), pp. 189–195. [doi:10.21437/SSW.2025-29](https://doi.org/10.21437/SSW.2025-29)
 
-### Key Features
-- **Dataset Setup**: Instructions on dataset preparation and preprocessing for VITS.
-- **Model Training**: End-to-end steps on configuring and training the model.
-- **Inference**: Guide to generating TTS outputs from text input using the trained model.
+## What we did
 
-## Results
-- Due to an upcoming publication, specific results are not yet publicly available.
-- **Model Access**: You can try the trained models on my [Hugging Face](https://huggingface.co/Pipe1213).
+- Trained VITS on Walloon recordings from two speakers, in a low-data (18 minutes) and a full-data (156 minutes) condition.
+- Compared grapheme vs. phoneme input, and training from scratch vs. fine-tuning a French-pretrained model.
+- Evaluated with objective speech metrics and a perceptual test with 23 native Walloon listeners. Best system: **4.22/5 MOS**.
 
-### Usage
-- Follow the tutorial below.
+## Try the models
 
+Interactive demos on Hugging Face Spaces:
 
-## Training from Scratch
+- [Walloon, phoneme input](https://huggingface.co/spaces/Pipe1213/VITS_Walloon_Phonemes)
+- [Walloon, grapheme input](https://huggingface.co/spaces/Pipe1213/VITS_Walloon_Graphemes)
+- [French base model](https://huggingface.co/spaces/Pipe1213/VITS_French)
+
+Analysis notebooks (bootstrap confidence intervals, speech and silence measurements): [Walloon-Synthesis-Results](https://github.com/lisn-speech-synthesis/Walloon-Synthesis-Results).
+
+## Citation
+
+```bibtex
+@inproceedings{orjuela25_ssw,
+  title     = {Speech synthesis for Walloon, an under-resourced minority language},
+  author    = {Espinosa Orjuela, Jos{\'e} Felipe and Boula de Mare{\"u}il, Philippe and Evrard, Marc},
+  booktitle = {13th ISCA Speech Synthesis Workshop (SSW 2025)},
+  pages     = {189--195},
+  year      = {2025},
+  doi       = {10.21437/SSW.2025-29}
+}
+```
+
+---
+
+## Training VITS on your own data
+
+This repository is based on the original [VITS implementation](https://github.com/jaywalnut310/vits) by Jaehyeon Kim et al. The steps below explain how to train it from scratch on a custom dataset and run inference.
+
 
 ### 1. Clone repository and dependencies
 Clone this repository onto your system:
 
-``git clone https://github.com/Pipe1213/VITS_Tutorial.git``
+``git clone https://github.com/lisn-speech-synthesis/Walloon-Synthesis-VITS.git``
 
 ### 2. Enviroment setup
 
