@@ -8,7 +8,7 @@ Code for the first text-to-speech system for Walloon, an under-resourced Romance
 
 - Trained VITS on Walloon recordings from two speakers, in a low-data (18 minutes) and a full-data (156 minutes) condition.
 - Compared grapheme vs. phoneme input, and training from scratch vs. fine-tuning a French-pretrained model.
-- Evaluated with objective speech metrics and a perceptual test with 23 native Walloon listeners. Best system: **4.22/5 MOS**.
+- Evaluated with objective speech metrics and a perceptual test with 23 Walloon speakers. Best systems (fine-tuned from French, grapheme input): **4.10/5 MOS** for both voices, against 4.48–4.55 for natural speech.
 
 ## Try the models
 
